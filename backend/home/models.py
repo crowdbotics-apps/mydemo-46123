@@ -8,3 +8,11 @@ class Articale(models.Model):
         max_length=255,
     )
     description = models.TextField()
+
+
+class News(models.Model):
+    "Generated Model"
+    title = models.CharField(
+        max_length=255,
+    )
+    description = models.TextField()

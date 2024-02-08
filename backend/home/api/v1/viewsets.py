@@ -1,6 +1,13 @@
 from rest_framework import viewsets
-from home.models import Articale, Articale, Articale
-from .serializers import ArticaleSerializer, ArticaleSerializer, ArticaleSerializer
+from home.models import Articale, News, Articale, News, Articale, News
+from .serializers import (
+    ArticaleSerializer,
+    NewsSerializer,
+    ArticaleSerializer,
+    NewsSerializer,
+    ArticaleSerializer,
+    NewsSerializer,
+)
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -41,3 +48,12 @@ class ArticaleViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Articale.objects.all()
+
+
+class NewsViewSet(viewsets.ModelViewSet):
+    serializer_class = NewsSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = News.objects.all()
