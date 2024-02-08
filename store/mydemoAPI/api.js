@@ -27,6 +27,24 @@ function api_v1_articale_destroy(payload) {
 function api_v1_login_create(payload) {
   return mydemoAPI.post(`/api/v1/login/`, payload)
 }
+function api_v1_news_list(payload) {
+  return mydemoAPI.get(`/api/v1/news/`)
+}
+function api_v1_news_create(payload) {
+  return mydemoAPI.post(`/api/v1/news/`, payload)
+}
+function api_v1_news_retrieve(payload) {
+  return mydemoAPI.get(`/api/v1/news/${payload.id}/`)
+}
+function api_v1_news_update(payload) {
+  return mydemoAPI.put(`/api/v1/news/${payload.id}/`, payload)
+}
+function api_v1_news_partial_update(payload) {
+  return mydemoAPI.patch(`/api/v1/news/${payload.id}/`, payload)
+}
+function api_v1_news_destroy(payload) {
+  return mydemoAPI.delete(`/api/v1/news/${payload.id}/`)
+}
 function api_v1_signup_create(payload) {
   return mydemoAPI.post(`/api/v1/signup/`, payload)
 }
@@ -72,6 +90,12 @@ export const apiService = {
   api_v1_articale_partial_update,
   api_v1_articale_destroy,
   api_v1_login_create,
+  api_v1_news_list,
+  api_v1_news_create,
+  api_v1_news_retrieve,
+  api_v1_news_update,
+  api_v1_news_partial_update,
+  api_v1_news_destroy,
   api_v1_signup_create,
   rest_auth_login_create,
   rest_auth_logout_create,
